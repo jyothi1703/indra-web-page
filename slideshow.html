@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+<TITLE>Slide Show Example</TITLE>
+	<style>
+		.a
+		{
+			border-radius:65%;
+			box-shadow: 4px 11px 9px black;
+		}
+		a
+		{
+			text-decoration:none;
+		}
+		body
+		{
+			background-image:url("nature.jpg");
+		}
+		@font-face 
+			{
+				font-family: 'new';
+				src: url('EuphoriaScript-Regular.ttf');
+			}
+			p
+			{
+				font-size: 40px;
+				font-family: 'new';
+				color: darkgoldenrod;
+				text-shadow: 4px 4px 4px;
+			}
+			span
+			{
+				font-size: 14px;
+				font-family: cursive;
+				background-color: orange;
+				padding: 11px;
+				color: green;
+				font-weight: 700;
+				border-radius: 8px;
+				box-shadow: 4px 4px 4px;
+			}
+			.do
+			{
+				width:400px;
+				margin-left:35px;
+			}
+	</style>
+	<script>
+		var myPix = new Array("1.jpg", "2.jpg", "3.jpg",
+		                      "4.jpg","5.jpg","6.jpg",
+							  "7.jpg","9.jpg","10.jpg","11.jpg"
+							  ,"12.jpg","13.png","14.png");
+		var thisPic = 0;
+		function processPrevious() 
+		{
+			if (document.images && thisPic > 0) 
+			{
+				thisPic--;
+				document.myPicture.src=myPix[thisPic];
+			}
+		}
+		function processNext() 
+		{
+			if (document.images && thisPic < 12) 
+			{
+				thisPic++;
+				document.myPicture.src=myPix[thisPic];
+			}
+		}
+	</script>
+
+</HEAD>
+
+<BODY>
+<audio src="sweet.mp3" autoplay loop="1000"></audio>
+<p align="center">OUR SWEET MEMORIES</p>
+<img src="dove.gif" class="do">
+<IMG SRC="1.jpg" NAME="myPicture" width="450" height="450" class="a">
+<img src="dove2.gif" class="do">
+<br><br><br>
+<center>
+<A HREF="javascript:processPrevious()"><font size="5"><span>PREVIOUS</span></A>
+&nbsp;&nbsp;&nbsp; 
+<A HREF="javascript:processNext()"><span>NEXT</span></A></font>
+
+</P>
+</center>
+
+</BODY>
+
+</HTML>
